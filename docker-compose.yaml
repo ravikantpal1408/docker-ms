@@ -1,0 +1,17 @@
+version: '3.6'
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    user: root
+    ports:
+      - 1433:1433
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Asdzxc@987
+    volumes:
+      - ./data:/var/opt/mssql/data
+
+
+# docker run -e "ACCEPT_EULA=1" -e "MSSQL_SA_PASSWORD=MyStrongPass123" -e "MSSQL_PID=Developer" -e "MSSQL_USER=SA" -p 1433:1433 -d --name=sql mcr.microsoft.com/azure-sql-edge
+# docker-compose up -d
+# docker-compose down -d
